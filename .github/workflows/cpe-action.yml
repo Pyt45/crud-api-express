@@ -1,7 +1,8 @@
-name: github-action
+name: cpe-action
 on:
   push:
-    - branches: [master]
+    branches: [master]
+
 jobs:
   unit-test:
     runs-on: ubuntu-latest
