@@ -1,8 +1,7 @@
 name: github-action
 on:
   push:
-    branches:
-      - master
+    - branches: [master]
 jobs:
   unit-test:
     runs-on: ubuntu-latest
