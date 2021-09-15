@@ -114,11 +114,17 @@ router.post('/login', [check('email').isEmail(), check('password').isLength({ mi
     }
 })
 
-router.get('/', auth, (req, res) => {
-    const users = User.find();
-    return res.status(200).json({
-        msg: 'you are allowed to go here'
-    });
+router.get('/', auth, async (req, res) => {
+    try {
+        const users = await User.find();
+        res.status(200).json(users);
+        /*return res.status(200).json({
+            msg: 'you are allowed to go here'
+        });*/
+    }catch(err) {
+        console.log(err.message);
+        res.status(500).send('server error');
+    }
 })
 
 module.exports = router;
