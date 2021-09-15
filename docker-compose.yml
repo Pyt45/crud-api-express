@@ -7,8 +7,8 @@ services:
     environment:
       NODE_ENV: development
       PORT: 9000
-      MONGO_URL: mongodb://mongo/db
-      JWT_SECRET: ""
+      MONGO_URL: mongodb://mongo:27017/db
+      JWT_SECRET: "secure"
     ports:
       - "9000:9000"
     volumes:

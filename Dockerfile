@@ -10,11 +10,11 @@ RUN npm i
 
 RUN npm audit fix --force
 
-RUN COPY . .
+COPY . .
 
 # RUN npm install -g nodemon
 
-EXPOSE 8080
+EXPOSE 9000
 
 # ENTRYPOINT ["nodemon", "server.js"]
 
