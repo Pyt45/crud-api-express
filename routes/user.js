@@ -145,12 +145,13 @@ const { check } = require('express-validator');
 
 router
     .get('/', user.onGetAllUsers)
-    .post('/', [
+    .post('/signup', [
         check('username').not().isEmpty(),
         check('email').isEmail(),
         check('password').isLength({ min: 6 }),
         check('type').isIn(['consumer', 'support'])
     ], user.onCreateUser)
+    .post('signin', user.OnLoginIn)
     .get('/:id', user.onGetUserById)
     .delete('/:id', user.onDeleteUserById)
 
